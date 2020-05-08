@@ -1,28 +1,17 @@
+import Generator
+from flask import current_app
 from flask import Flask
-from flask import request
-from flask import render_template
-
-
 app = Flask(__name__)
 
 
 @app.route('/')
-def my_form():
-    return render_template("my-form.html")  # this should be the name of your html file
+def index():
+    return '<h1>Hello World!</h1>'
+
+# @app.route('/user/<name>')
 
 
-@app.route('/', methods=['POST'])
-def my_form_post():
-    text1 = request.form['text1']
-    text2 = request.form['text2']
-    # plagiarismPercent = stringComparison.extremelySimplePlagiarismChecker(text1, text2)
-    return '<h1> Test'
-    """if plagiarismPercent > 50:
-        return "<h1>Plagiarism Detected !</h1>"
-    else:
-        return "<h1>No Plagiarism Detected !</h1>"
-    """
-
+app.add_url_rule('/', 'index', index)
 
 if __name__ == '__main__':
     app.run()
