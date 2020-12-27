@@ -6,10 +6,10 @@ app = Flask(__name__)
 
 
 def index():
-    return '<h1>Hello World!</h1>'
+    return "<h1>Hello World!</h1>"
 
 
-@app.route('/index', endpoint=Generator.Customer)
+@app.route("/index", endpoint=Generator.Customer)
 def my_form_post():
     # text1 = request.form['text1']
     # text2 = request.form['text2']
@@ -18,7 +18,7 @@ def my_form_post():
     return
 
 
-app.add_url_rule('/', 'index', my_form_post)
+app.add_url_rule("/", "index", my_form_post)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()

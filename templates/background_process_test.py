@@ -7,16 +7,16 @@ import Generator
 app = Flask(__name__)
 
 
-@app.route('/json')
+@app.route("/json")
 def json():
-    return render_template('json.html')
+    return render_template("json.html")
 
 
-@app.route('/background_process_test')
+@app.route("/background_process_test")
 def background_process_test():
     print("Hello")
     return "nothing"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()

@@ -1,17 +1,19 @@
 import Generator
 from flask import current_app
 from flask import Flask
+
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    return '<h1>Hello World!</h1>'
+    return "<h1>Hello World!</h1>"
+
 
 # @app.route('/user/<name>')
 
 
-app.add_url_rule('/', 'index', index)
+app.add_url_rule("/", "index", index)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
