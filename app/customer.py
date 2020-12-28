@@ -5,7 +5,7 @@ import os
 def build_new():
     absolute_path = os.path.dirname(os.path.abspath(__file__))
     customer_name = random.choice(
-        open(f"{absolute_path}\\static\\Name.txt", "r")
+        open(f"{absolute_path}/static/Name.txt", "r")
         .read()
         .replace("\n", " ")
         .replace("\r", "")
@@ -14,7 +14,7 @@ def build_new():
 
     customer_demand = random.choice(
         (
-            open(f"{absolute_path}\\static\\Customer_Demand.txt", "r")
+            open(f"{absolute_path}/static/Customer_Demand.txt", "r")
             .read()
             .replace("\n", " ")
             .replace("\r", "")
@@ -23,13 +23,13 @@ def build_new():
     ).strip()
 
     customer_race = random.choice(
-        open(f"{absolute_path}\\static\\Race.txt", "r").read().split(",")
+        open(f"{absolute_path}/static/Race.txt", "r").read().split(",")
     )
     customer_profession = random.choice(
-        open(f"{absolute_path}\\static\\Profession.txt", "r").read().split(",")
+        open(f"{absolute_path}/static/Profession.txt", "r").read().split(",")
     )
     will_they_haggle = random.choice(
-        open(f"{absolute_path}\\static\\WTH.txt", "r").read().split(",")
+        open(f"{absolute_path}/static/WTH.txt", "r").read().split(",")
     )
 
     return {
