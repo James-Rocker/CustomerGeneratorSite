@@ -4,20 +4,16 @@ from flask import Flask
 from app import customer
 
 
-def create_app():
-    # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
+# create and configure the app
+app = Flask(__name__, instance_relative_config=True)
 
-    # the home page
-    @app.route("/")
-    def hello():
-        return render_template("home.html", jsonfile=json.dumps(customer.build_new()))
 
-    return app
+# the home page
+@app.route("/")
+def home_page():
+    return render_template("home.html", jsonfile=json.dumps(customer.build_new()))
 
 
 if __name__ == "__main__":
-    create_app = create_app()
-    create_app.run(debug=True)
-else:
-    gunicorn_app = create_app()
+    app.run(debug=True)
+
