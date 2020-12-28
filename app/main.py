@@ -1,4 +1,4 @@
-import os
+import json
 from flask import render_template
 from flask import Flask
 from app import customer
@@ -11,7 +11,7 @@ def create_app():
     # the home page
     @app.route("/")
     def hello():
-        return render_template('home.html', data=customer.build_new())
+        return render_template('home.html', jsonfile=json.dumps(customer.build_new()))
     return app
 
 
