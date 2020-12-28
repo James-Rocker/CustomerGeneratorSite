@@ -1,0 +1,20 @@
+0. Overhaul the structure to make a bit more sense
+
+1. Allow for users to create new customers
+
+2. Generate a new customer based on a button input
+
+3. Allow the user to build 'x' customers
+
+4. Configure the docker build
+
+5. Create a CI/CD process with github
+
+6. Allow for users to retrieve existing users
+- configure a database
+- build the database as part of the deployment
+
+7. Allow for a user to login to retrieve only the customers they have created
+- Create a login page & login functions
+- Create user roles
+- Create email confirmations of logins
