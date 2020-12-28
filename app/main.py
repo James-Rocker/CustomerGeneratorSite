@@ -11,7 +11,8 @@ def create_app():
     # the home page
     @app.route("/")
     def hello():
-        return render_template('home.html', jsonfile=json.dumps(customer.build_new()))
+        return render_template("home.html", jsonfile=json.dumps(customer.build_new()))
+
     return app
 
 
