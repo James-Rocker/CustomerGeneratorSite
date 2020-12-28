@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Customer Builder</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+  <body>
+  <h1>New Customer</h1>
+    <div class="container">
+        <script>
+          const json_file = JSON.parse({{jsonfile|tojson|safe}});
+          console.log(json_file);
+          document.querySelector(".container").innerHTML = JSON.stringify(json_file, null, 2);
+        </script>
+    </div>
+    <button onClick="window.location.reload();">New Customer</button>
+
+  </body>
+</html>
