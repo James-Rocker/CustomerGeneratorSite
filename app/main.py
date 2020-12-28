@@ -1,7 +1,7 @@
 import json
 from flask import render_template
 from flask import Flask
-import customer
+from app import customer
 
 
 def create_app():
