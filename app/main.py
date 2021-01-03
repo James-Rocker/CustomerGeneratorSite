@@ -1,6 +1,6 @@
 import json
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 
 from app import customer
 
@@ -12,6 +12,13 @@ app = Flask(__name__, instance_relative_config=True)
 @app.route("/")
 def home_page():
     return render_template("home.html", jsonfile=json.dumps(customer.build_new()))
+
+
+# the api route
+@app.route("/api/v1/customer", methods=['GET'])
+def customer_api():
+    if request.method == 'GET':
+        return customer.build_new()
 
 
 if __name__ == "__main__":
