@@ -1,8 +1,8 @@
 import json
-from flask import render_template
-from flask import Flask
-from app import customer
 
+from flask import Flask, render_template
+
+from app import customer
 
 # create and configure the app
 app = Flask(__name__, instance_relative_config=True)
